@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación XV Años - María José</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background-color: #a2cadf;
+            color: #4a4a4a;
+            overflow-x: hidden;
+        }
+        
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .menu {
+            position: sticky;
+            top: 0;
+            background: #a2cadf;
+            color: #fff;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+        }
+        .header {
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar horizontalmente */
+}
+
+.header-decoration {
+    width: 200px;
+    position: relative; /* Quita la posición absoluta */
+    margin: 10px auto; /* Centra horizontalmente */
+    display: block; /* Asegura que las imágenes no sean inline */
+}
+
+.top {
+    transform: none; /* Asegura que no haya desplazamiento */
+}
+
+.bottom {
+    transform: rotate(180deg); /* Mantiene la rotación */
+}
+        .header {
+            background-image: url('https://via.placeholder.com/900x400'); /* Cambiar por una imagen inspirada en Cenicienta */
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 5px solid #a2cadf;
+        }
+    
+
+        .header h1 {
+            font-size: 4em;
+            margin: 0;
+            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.6);
+        }
+
+        .header p {
+            font-size: 1.8em;
+            margin-top: 10px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .content {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 3em;
+            margin: 20px 0;
+            color: #a2cadf;
+        }
+
+        .content p {
+            line-height: 1.8;
+            margin: 10px 0;
+        }
+
+        .content a {
+            color: #a2cadf;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .circles {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #f3f1f7;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .circle + p {
+            margin-top: 10px;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            color:#a2cadf;
+        }
+
+        .timer div {
+            text-align: center;
+            background: #fff;
+            padding: 15px;
+            border: 2px solid #a2cadf;
+            border-radius: 8px;
+            width: 100px;
+        }
+
+        .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #a2cadf;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+}
+
+.btn:hover {
+    background-color: black;
+    color: white !important;
+}
+
+        
+        .card-container {
+    width: 300px; /* Aumenta el ancho */
+    height: 200px; /* Disminuye la altura */
+    margin: 20px auto;
+    perspective: 1000px; /* Perspectiva necesaria para la rotación */
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d; /* Habilita el 3D */
+    transition: transform 0.6s; /* Controla la duración del giro */
+}
+
+.card:hover {
+    transform: rotateY(180deg); /* Gira la carta */
+}
+
+.card .front, .card .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden; /* Oculta la cara opuesta al girar */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card .front {
+    background-image: url('https://via.placeholder.com/300x200'); /* Ajusta la imagen al nuevo tamaño */
+    background-size: cover;
+    background-position: center;
+}
+
+.card .back {
+    background-color: #f3f1f7;
+    transform: rotateY(180deg); /* Define la rotación de la cara trasera */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    font-size: 1em; /* Ajusta el tamaño del texto */
+    color: #4a4a4a;
+}
+
+.small-image {
+    width: 100%; /* Asegúrate de que la imagen ocupe todo el frente */
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover; /* Mantén la proporción */
+}
+
+
+
+
+        .restrictions {
+            background: #fff4f7;
+            padding: 20px;
+            margin-top: 20px;
+            border: 2px dashed #e91e63;
+            border-radius: 8px;
+        }
+
+        .restrictions p {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+
+        @media (max-width: 480px) {
+            .menu {
+        padding: 5px 0; /* Reduce el padding */
+    }
+
+    .menu a {
+        font-size: 0.9em; /* Reduce el tamaño de la fuente */
+        padding: 5px; /* Espaciado más pequeño entre los enlaces */
+    }
+
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .header p {
+        font-size: 1em;
+    }
+
+    .content h2 {
+        font-size: 2em;
+    }
+    
+
+    .content p {
+        font-size: 1em;
+        margin: 5px 0;
+    }
+
+    .circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+
+    .timer div {
+        width: 50px;
+        padding: 8px;
+        font-size: 0.8em;
+    }
+}
+.title-background {
+    background: url('https://24.media.tumblr.com/21ce362a971bdff446ba192e3ef4b2e7/tumblr_n1n6o0mSpl1trmkp7o1_500.gif') center/cover no-repeat;
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    display: inline-block; /* Se ajusta al contenido */
+    text-align: center; /* Centra el texto */
+}
+
+ 
+    </style>
+    <script>
+        function countdown() {
+        const eventDate = new Date("2025-02-22T18:00:00").getTime();
+
+        function updateTimer() {
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
+
+            if (timeLeft < 0) {
+                document.getElementById("timer").innerHTML = "¡El día ha llegado!";
+                clearInterval(interval);
+                return;
+            }
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+        }
+
+        const interval = setInterval(updateTimer, 1000);
+    }
+
+    document.addEventListener("DOMContentLoaded", countdown);
+    </script>
+</head>
+<body>
+    <div class="menu">
+        <a href="#detalles">Detalles del Evento</a>
+        <a href="#itinerario">Itinerario</a>
+        <a href="#vestimenta">Código de Vestimenta</a>
+        <a href="#confirmar">Confirmar Asistencia</a>
+    </div>
+
+    <div class="container">
+        <div class="header" >
+            <img src="https://fernandoyjay.invitamosporti.com/wp-content/uploads/2024/08/flores-JyF.png" alt="Decoración floral arriba" class="header-decoration top">
+            <div class="title-background">
+                <h1>Mis XV Años</h1>
+                <h1>María José Alarcón Amado</h1>
+            </div>
+            <img src="https://fernandoyjay.invitamosporti.com/wp-content/uploads/2024/08/flores-JyF.png" alt="Decoración floral abajo" class="header-decoration bottom">
+        </div>
+
+        <div class="card-container">
+            <div class="card">
+                <div class="front">
+                    <img class="small-image" src="https://www.vinilosdecorativos.com/3937-thickbox_default/fotomural-infantil-la-carroza-de-la-cenicienta.jpg" alt="Carroza de Cenicienta">
+                </div>
+                <div class="back">Si fuiste curioso y tocaste la tarjeta, espero que puedas llegar, ¡te quiero!</div>
+            </div>
+        </div>
+        
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0BNQdhKugKzoezQVkHB1TA?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div id="detalles" class="content" style="border-bottom: 5px solid #a2cadf;">
+            
+            <h2 style="font-size: 60px;">Detalles del Evento</h2>
+            <br>
+            <br>
+            <h2>Ubicaciones</h2>
+            <div class="circles">
+                <div class="circle" style="background-image: url('https://mapa60vueltaciclisticabanrural.prensalibre.com/wp-content/uploads/2020/03/iglesias-santa-delfina-de-signe-01.jpg');"></div>
+                <p><a href="https://maps.app.goo.gl/XHJiaJWhuXE5jffJ6" class="btn">Ver Iglesia</a></p>
+
+                <div class="circle" style="background-image: url('https://fastly.4sqi.net/img/general/600x600/58227652_-RNfbw_aruzXkNb1S00QEO-cTw8nXvXb5XhZvBfSayY.jpg');"></div>
+                <p><a href="https://maps.app.goo.gl/51n2bgFiTCe4mgdt6" class="btn">Ver Salón</a></p>
+            </div>
+            <h2>Fecha</h2>
+            <h2>22 de febrero del 2025</h2>
+            <h3 style="color: #a2cadf;">Solo faltan:</h3>
+        
+
+            <div id="timer" class="timer" >
+                <div><span id="days">0</span><br>Días</div>
+                <div><span id="hours">0</span><br>Horas</div>
+                <div><span id="minutes">0</span><br>Minutos</div>
+                <div><span id="seconds">0</span><br>Segundos</div>
+            </div>
+            
+        </div>
+
+        <div id="itinerario" class="content" style="border-bottom: 5px solid #a2cadf;">
+            <h2>Itinerario</h2>
+        
+            <!-- Imagen encima de MISA -->
+            <div style="text-align: center;">
+                <img src="https://i.pinimg.com/originals/6f/24/8b/6f248beddaa2630c9fe086628706b94c.png" alt="Imagen Misa" style="width: 150px; height: auto;">
+            </div>
+        
+            <h3 style="color: #a2cadf; font-family: cursive;">MISA</h3>
+            <p><strong>Hora: </strong>6:00 PM</p>
+            <p>Capilla Santa Delfina de Signe</p>
+        
+            <!-- Imagen encima de Recepción -->
+            <div style="text-align: center;">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/036/656/070/small_2x/castle-free-vector.png" alt="Imagen Recepción" style="width: 150px; height: auto;">
+            </div>
+        
+            <h3 style="color: #a2cadf; font-family: cursive;">Recepción</h3>
+            <p><strong>Hora: </strong>8:00 PM</p>
+            <p>Centro Deportivo Jose Mariano Arzu</p>
+        </div>
+        
+
+        <div id="vestimenta" class="content" style="border-bottom: 5px solid #a2cadf;">
+            <h2>Código de Vestimenta</h2>
+            <h3 style="color: #a2cadf; font-family: cursive;">FORMAL</h3>
+            <div class="circles">
+                <div class="circle" style="background-image: url('https://media.istockphoto.com/id/1852637679/es/vector/hermosa-joven-dama-con-vestido-negro-vector-aislado-sobre-fondo-blanco-ropa-moderna-y.jpg?s=612x612&w=0&k=20&c=0YfIe2bQXIuoWk13f5sSePhk8k7USwFzHi-l3pSbdIc=');"></div>
+                <div class="circle" style="background-image: url('https://i.pinimg.com/736x/50/8c/ef/508cef129dd234976724a1172cfb569d.jpg');"></div>
+            </div>
+            <p>Para mantener una armonía visual, les pedimos que eviten vestir prendas en color celeste.</p>
+            <BR>
+            <p>Respetuosamente, no niños.</p>
+        </div>
+
+        <div id="confirmar" class="content" style="border-bottom: 5px solid #a2cadf;">
+            <h2>Confirmar Asistencia</h2>
+            <p><strong>OBLIGATORIO</strong></p>
+            <h3 style="color: #a2cadf; font-family: cursive;">(Último día para confirmar tu asistencia, viernes 14 de febrero)</h3>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKGJhDATqfx0maiZsDj4PQLbbWEtJv4g4UkTCbG0-OHs-BDQ/viewform?usp=header" class="btn">Click para confirmar asistencia</a>
+        </div>
+
+        <div id="Regalos" class="content">
+            <h2>Regalos</h2>
+            <p>Que nos acompañes es lo más importante. Si está en tu disposición realizar una muestra de cariño, estaremos muy agradecidos.</p>
+            <br>
+        
+            <!-- Imagen encima de Lluvia de sobres -->
+            <div style="text-align: center;">
+                <img src="https://cdn-icons-png.freepik.com/512/29/29998.png" alt="Imagen Lluvia de sobres" style="width: 150px; height: auto;">
+            </div>
+        
+            <h3 style="color: #a2cadf; font-family: cursive;">Lluvia de sobres</h3>
+            <p>Lluvia de sobres es la tradición de regalar dinero en efectivo a la quinceañera en un sobre el día del evento.</p>
+        </div>
+        
+    </div>
+</body>
+</html>
